@@ -43,8 +43,8 @@ class DatosRenovacionController extends Controller
 
        $RFC= $request->rfc;  //Obtiene RFC de la pantalla de captura 
          
-        if(DB::table("Datos_cliente")->where('rfc', '=', $RFC)->exists() ){
-            $getStatus = DB::table("Datos_cliente")
+        if(DB::table("datos_cliente")->where('rfc', '=', $RFC)->exists() ){
+            $getStatus = DB::table("datos_cliente")
             ->where("rfc", $RFC)
             ->get()
             ->first();
@@ -67,12 +67,12 @@ class DatosRenovacionController extends Controller
             ]);
             $Data_login = json_decode($Api_login->getBody(),true); //Obtiene cuerpo del response 
             $token_api= $Data_login['token'];//Obtiene bearer token login 
-            $serch = DB::table("Datos_cliente")
+            $serch = DB::table("datos_cliente")
             ->where("rfc", $RFC)
             ->get()
             ->first();
             $Id_Cliente = $serch->cliente_id;
-            $datoscredito = DB::table("Datos_Credito")
+            $datoscredito = DB::table("datos_credito")
             ->where("cliente_id", $Id_Cliente)
             ->get()
             ->first();
@@ -85,12 +85,12 @@ class DatosRenovacionController extends Controller
             $registro_datosdomicilio=json_encode($datosdomicilio, true);
             return view('datosRenovacionOferta',compact('registro_datoscredito','registro_datospersonales','registro_datosdomicilio','token_api'));
         }if(strcmp($status, "Registro") === 0){
-            $serch = DB::table("Datos_cliente")
+            $serch = DB::table("datos_cliente")
             ->where("rfc", $RFC)
             ->get()
             ->first();
             $Id_Cliente = $serch->cliente_id;
-            $datoscredito = DB::table("Datos_Credito")
+            $datoscredito = DB::table("datos_credito")
             ->where("cliente_id", $Id_Cliente)
             ->get()
             ->first();

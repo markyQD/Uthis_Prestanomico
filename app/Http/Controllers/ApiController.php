@@ -36,7 +36,7 @@ class ApiController extends Controller
     {
         $rfc_recived = $request->only("rfc");
 
-        $cliente = DB::table("Datos_cliente")
+        $cliente = DB::table("datos_cliente")
             ->where("rfc", $rfc_recived)
             ->get()
             ->first();
@@ -51,7 +51,7 @@ class ApiController extends Controller
         $rfc = $cliente->rfc;
         $Id_Cliente = $cliente->cliente_id;
 
-        $datos_domicilio = DB::table("Datos_Domicilio")
+        $datos_domicilio = DB::table("datos_Domicilio")
             ->where("cliente_id", $Id_Cliente)
             ->get()
             ->first();
@@ -74,7 +74,7 @@ class ApiController extends Controller
         // El cliente conserva el domicilio que el servicio regresa)
 
         // $nombre=['Datos_cliente' => $cliente->id];
-        $datos_credito = DB::table("Datos_Credito")
+        $datos_credito = DB::table("datos_Credito")
             ->where("cliente_id", $Id_Cliente)
             ->get()
             ->first();
