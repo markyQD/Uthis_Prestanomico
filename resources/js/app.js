@@ -23,9 +23,6 @@ Vue.use(VueFormWizard)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('index_rfc', require('./components/index_rfc.vue').default);
-Vue.component('index_rfc2', require('./components/index_rfc2.vue').default);
-// Vue.component('datos_personales', require('./components/datosPersonales.vue').default);
-// Vue.component('datos_domicilio', require('./components/datosDomicilio.vue').default);
 Vue.component('datos_renovacion', require('./components/datosRenovacion.vue').default);
 Vue.component('oferta', require('./components/oferta.vue').default);
 /**

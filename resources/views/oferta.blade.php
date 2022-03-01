@@ -13,7 +13,7 @@
     </head>
     <body>
         <div>
-
+      
 
         </div>
 
@@ -22,7 +22,8 @@
     <form method="POST" action=DatosRenovacion class="row g-3 needs-validation" data-toggle="validator">
     {{ csrf_field() }}
      <div id="app" >
-     <oferta monto='{{$s}}' plazo='{{$s2}}' pago_mensual='{{$s3}}' tasa_interes='{{$s4}}'> </oferta>
+
+     <oferta monto='{{$s}}' plazo='{{$s2}}' pago_mensual='{{$s3}}' tasa_interes='{{$s4}}' cliente_id='{{$s5}}'> </oferta>
 </div>
 
 <script src="{{ mix('/js/app.js') }}"></script>

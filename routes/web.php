@@ -17,8 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::resource('/', 'IndexController',['only' => ['index', 'store', 'update']]);
-Route::resource('/DatosRenovacion', 'DatosRenovacionController',['only' => ['index', 'store', 'update','change_cp']]);
-Route::resource('/Oferta', 'OfertaController',['only' => ['store', 'update','change_cp']]);
-Route::resource('/pruebas', 'DatosRenovacionController@store');
+Route::resource('/', 'IndexController');
+Route::resource('/DatosRenovacion', 'DatosRenovacionController',['only' => ['index', 'store', 'update']]);
+Route::resource('/Oferta', 'OfertaController',['only' => ['store', 'update']]);
 Route::resource('/DatosRenovacion_cp', 'Cambio_CP_Controller',['only' => ['store', 'update']]);

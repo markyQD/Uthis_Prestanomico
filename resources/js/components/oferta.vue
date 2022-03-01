@@ -5,8 +5,10 @@
    <h1 class="mb-3">TIENE UNA OFERTA PARA TI:</h1>
 <div class="p-5 text-center bg-light justify-content-center">
        <div>
+          
          <label class="label-oferta"  for="monto">Monto: </label>
        <span class="monto">{{this.monto}}</span>
+       <span class="cliente">{{this.cliente_id}}</span>
        </div>
         
        <div>
@@ -55,7 +57,8 @@ import axios from "axios";
      
     },
     Oferta_aceptada(value) {
-   axios.put("/Oferta/update",{oferta:value}).then((result) => {
+   axios.put("/Oferta/update",{oferta:value,id_cliente:this.cliente_id}).then((result) => {
+window.location.replace("/");
 console.log(value);
 
   }).catch(error => {
@@ -64,10 +67,11 @@ console.log(value);
     });
    },
      Oferta_rechazada(value) {
+
+
+    axios.put("/Oferta/update",{oferta:value,id_cliente:this.cliente_id}).then((result)  => {
+window.location.replace("/");
 console.log(value);
-
-    axios.put("/Oferta/update",{oferta:value}).then((result)  => {
-
 
   }).catch(error => {
       this.errorMessage = error.message;
@@ -75,7 +79,7 @@ console.log(value);
     });
    },
   },
-    props:{monto:String,plazo:String,pago_mensual:String,tasa_interes:String},
+    props:{monto:String,plazo:String,pago_mensual:String,tasa_interes:String,cliente_id:String},
     mounted () {
       console.dir(this.datos_domicilio)
     }

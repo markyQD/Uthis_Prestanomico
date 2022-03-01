@@ -1,11 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Datos_Domicilio;
 use App\Models\Datos_Personales;
-
+use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\IndexController;
 class OfertaController extends Controller
 {
     /**
@@ -43,6 +42,8 @@ class OfertaController extends Controller
         $s7= $request->municipio; 
         $s8= $request->colonia; 
         $s9= $request->estado;
+       
+        
     Datos_Domicilio::where('cliente_id', $s5)->update(["calle"=>  $s10,
                                                             "cp"=>$s6,
                                                             "municipio"=>$s7,
@@ -58,8 +59,8 @@ class OfertaController extends Controller
         $s2= $request->plazo; //Obtiene cuerpo del response 
         $s3= $request->pago_mensual; //Obtiene cuerpo del response 
         $s4= $request->tasa_interes; //Obtiene cuerpo del response 
-        echo "<script>console.log('Console: " . $s. "' );</script>"; 
-        return view('oferta',compact('s','s2','s3','s4'));
+        echo "<script>console.log('Console: " . $s5. "' );</script>"; 
+        return view('oferta',compact('s','s2','s3','s4','s5'));
     }
 
     /**
@@ -94,17 +95,23 @@ class OfertaController extends Controller
     public function update(Request $request, $id)
     {
         $oferta=$request->oferta;
-        if($oferta=="rechazada"){
-        Datos_Personales::where('cliente_id',  100234)->update([
+        $id_cliente=$request->id_cliente;
+        echo "<script>console.log('Console: " . $oferta. "' );</script>"; 
+        if($oferta==="rechazada"){
+        
+        Datos_Personales::where('cliente_id',  $id_cliente)->update([
             "status"=>"Oferta Rechazada"
+
         ]);
+       
     }else{
-        Datos_Personales::where('cliente_id',  100234)->update([
+        Datos_Personales::where('cliente_id',  $id_cliente)->update([
             "status"=>"Oferta Aceptada"
         ]);
+      
     }
 
-        return $oferta;
+       
 
     }
 
