@@ -73,7 +73,7 @@ class DatosRenovacionController extends Controller
                     $serch = DB::table("datos_cliente")->where("rfc", $RFC)->get()->first();
                     $Id_Cliente = $serch->cliente_id;
                     $datoscredito = DB::table("datos_credito")->where("cliente_id", $Id_Cliente)->get()->first();
-                    $datosdomicilio = DB::table("Datos_Domicilio")->where("cliente_id", $Id_Cliente)->get()->first();
+                    $datosdomicilio = DB::table("datos_domicilio")->where("cliente_id", $Id_Cliente)->get()->first();
                     $registro_datospersonales = json_encode($serch, true);
                     $registro_datoscredito = json_encode($datoscredito, true);
                     $registro_datosdomicilio = json_encode($datosdomicilio, true);
