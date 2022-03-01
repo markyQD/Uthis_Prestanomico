@@ -2637,7 +2637,7 @@ textarea.form-control.is-invalid {
   }
 }
 
-.btn {
+.btn-enviar {
   display: inline-block;
   font-weight: 400;
   color: #212529;
@@ -2654,6 +2654,9 @@ textarea.form-control.is-invalid {
   line-height: 1.6;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+background-color: #010025;
+color: white;
+
 }
 
 @media (prefers-reduced-motion: reduce) {

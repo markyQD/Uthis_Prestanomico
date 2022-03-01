@@ -6654,7 +6654,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody {\n  display: flex;\n  -ms-flex-align: center;\n  -ms-flex-pack: center;\n  align-items: center;\n  justify-content: center;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.p-5 {\ncolor: black;\n}\n.rfc{\ncolor: rgb(13, 7, 51);\nfont-weight: bold;\n}\n.form-group{\n  width: 100%;\n  max-width: 550px;\n  padding: 15px;\n  margin: 5 auto;\n  border-color: blue;\n  border: 5px;\n}\n.bg-light {\n    background-color: #92c6f78e !important;\n    border-color: black;\n}\n.btn{\n  width: 70%;\n\n  padding: 5px;\n  margin: 0 auto;\n  border-color: rgb(2, 0, 92);\n}\n.mb-3{\ncolor: rgb(13, 7, 51);\nfont-weight: bold;\n}\n.form-control {\n    display: block;\n    width: 100%;\n    height: calc(1.6em + 0.75rem + 2px);\n    padding: 0.375rem 0.75rem;\n    font-size: 0.9rem;\n    font-weight: 400;\n    line-height: 1.6;\n    color: #000000;\n    background-color: #fff;\n    background-clip: padding-box;\n    border: 1px solid #ced4da;\n    border-radius: 0.25rem;\n    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n    font-size: medium;\n    font-weight: bold;\n}\n\n", ""]);
+exports.push([module.i, "\nbody {\n  display: flex;\n  -ms-flex-align: center;\n  -ms-flex-pack: center;\n  align-items: center;\n  justify-content: center;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.p-5 {\ncolor: black;\n}\n.rfc{\n    color: rgb(5 0 34);\n    font-weight: bold;\n    font-size: large;\n}\n.form-group{\n  width: 100%;\n  max-width: 550px;\n  padding: 15px;\n  margin: 5 auto;\n  border-color: blue;\n  border: 5px;\n}\n.bg-light {\n    background-color: #92c6f78e !important;\n    border-color: black;\n}\n.btn-enviar{\n  width: 70%;\n  padding: 5px;\n  margin: 0 auto;\n  border-color: rgb(2, 0, 92);\n}\n.titulo {\n    color: rgb(12 8 56);\n    font-weight: bold;\n}\n.form-control {\n    display: block;\n    width: 100%;\n    height: calc(1.6em + 0.75rem + 2px);\n    padding: 0.375rem 0.75rem;\n    font-size: 0.9rem;\n    font-weight: 400;\n    line-height: 1.6;\n    color: #000000;\n    background-color: #fff;\n    background-clip: padding-box;\n    border: 1px solid #ced4da;\n    border-radius: 0.25rem;\n    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n    font-size: medium;\n    font-weight: bold;\n}\n\n", ""]);
 
 // exports
 
@@ -39273,9 +39273,9 @@ var staticRenderFns = [
         "div",
         { staticClass: "p-5 text-center bg-light justify-content-center" },
         [
-          _c("h1", { staticClass: "mb-3" }, [_vm._v("Uthis")]),
+          _c("h1", { staticClass: "titulo" }, [_vm._v("Uthis")]),
           _vm._v(" "),
-          _c("h4", { staticClass: "mb-3" }, [_vm._v("Prueba Tecnica")]),
+          _c("h4", { staticClass: "titulo" }, [_vm._v("Prueba Tecnica")]),
           _vm._v(" "),
           _c(
             "div",
@@ -39303,7 +39303,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c(
             "button",
-            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+            { staticClass: "btn-enviar", attrs: { type: "submit" } },
             [_vm._v("Enviar")]
           ),
         ]

@@ -1,13 +1,13 @@
 <template>
 <div class="form-group">
 <div class="p-5 text-center bg-light justify-content-center">
-        <h1 class="mb-3">Uthis</h1>
-        <h4 class="mb-3">Prueba Tecnica</h4>
+        <h1 class="titulo">Uthis</h1>
+        <h4 class="titulo">Prueba Tecnica</h4>
         <div class="form-group  text-center col-md-5 justify-content-center" >
         <label class="rfc" for="rfc">Escriba su RFC: </label>
         <input type="text" class="form-control" id="rfc" name="rfc" placeholder="Escribe RFC" required> 
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn-enviar">Enviar</button>
 
 </div>
  </div> 
@@ -44,9 +44,9 @@ color: black;
 }
 
 .rfc{
-color: rgb(13, 7, 51);
-font-weight: bold;
-  
+    color: rgb(5 0 34);
+    font-weight: bold;
+    font-size: large;
 }
 
 .form-group{
@@ -62,17 +62,18 @@ font-weight: bold;
     border-color: black;
 }
 
-.btn{
+.btn-enviar{
   width: 70%;
-
   padding: 5px;
   margin: 0 auto;
   border-color: rgb(2, 0, 92);
+  
 }
 
-.mb-3{
-color: rgb(13, 7, 51);
-font-weight: bold;
+.titulo {
+    color: rgb(12 8 56);
+    font-weight: bold;
+     
 }
 
 .form-control {
