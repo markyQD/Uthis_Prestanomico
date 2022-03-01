@@ -36,32 +36,54 @@ class OfertaController extends Controller
      */
     public function store(Request $request)
     {  
-        $s5= $request->client_id; 
-        $s10= $request->calle;
-        $s6= $request->cp; 
-        $s7= $request->municipio; 
-        $s8= $request->colonia; 
-        $s9= $request->estado;
-       
-        
-    Datos_Domicilio::where('cliente_id', $s5)->update(["calle"=>  $s10,
-                                                            "cp"=>$s6,
-                                                            "municipio"=>$s7,
-                                                            "colonia"=>$s8,
-                                                            "estado"=>$s9,
+        $client_id= $request->client_id; 
+        $calle= $request->calle;
+        $cp= $request->cp; 
+        $municipio= $request->municipio; 
+        $colonia= $request->colonia; 
+        $estado= $request->estado;
+       $chance_cp=$request->chance_cp;
+       if (strcmp($chance_cp, "Si") === 0) {   
+    Datos_Domicilio::where('cliente_id', $client_id)->update(["calle"=>  $calle,
+                                                            "cp"=>$cp,
+                                                            "municipio"=>$municipio,
+                                                            "colonia"=>$colonia,
+                                                            "estado"=>$estado,
                                                             "actualizado"=>"Si"
     ]);
-    Datos_Personales::where('cliente_id', $s5)->update([
+    Datos_Personales::where('cliente_id', $client_id)->update([
         "status"=>"Registro"
     ]);
         // $token_api= $request->monto;  //Obtiene RFC de la pantalla de captura 
-        $s= $request->monto; //Obtiene cuerpo del response 
-        $s2= $request->plazo; //Obtiene cuerpo del response 
-        $s3= $request->pago_mensual; //Obtiene cuerpo del response 
-        $s4= $request->tasa_interes; //Obtiene cuerpo del response 
-        echo "<script>console.log('Console: " . $s5. "' );</script>"; 
-        return view('oferta',compact('s','s2','s3','s4','s5'));
+        $monto= $request->monto; //Obtiene cuerpo del response 
+        $plazo= $request->plazo; //Obtiene cuerpo del response 
+        $pago_mensual= $request->pago_mensual; //Obtiene cuerpo del response 
+        $tasa_interes= $request->tasa_interes; //Obtiene cuerpo del response 
+     
+        return view('oferta',compact('monto','plazo','pago_mensual','tasa_interes','client_id'));
+    
+    }else{
+        Datos_Domicilio::where('cliente_id', $client_id)->update(["calle"=>  $calle,
+        "cp"=>$cp,
+        "municipio"=>$municipio,
+        "colonia"=>$colonia,
+        "estado"=>$estado,
+  
+    ]);
+    Datos_Personales::where('cliente_id', $client_id)->update([
+        "status"=>"Registro"
+    ]);
+        // $token_api= $request->monto;  //Obtiene RFC de la pantalla de captura 
+        $monto= $request->monto; //Obtiene cuerpo del response 
+        $plazo= $request->plazo; //Obtiene cuerpo del response 
+        $pago_mensual= $request->pago_mensual; //Obtiene cuerpo del response 
+        $tasa_interes= $request->tasa_interes; //Obtiene cuerpo del response 
+    
+        return view('oferta',compact('monto','plazo','pago_mensual','tasa_interes','client_id'));
+
+
     }
+}
 
     /**
      * Display the specified resource.

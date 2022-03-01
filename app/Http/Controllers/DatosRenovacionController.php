@@ -59,7 +59,7 @@ class DatosRenovacionController extends Controller
                    //Validacion para Oferta Aceptada 
                 if (strcmp($status, "Oferta Aceptada") === 0) {
                     $fecha_nuevoregis = date("d-m-Y", strtotime($fecha_modif . "+ 1 month"));
-                    return Redirect::back()->withErrors(["msg" => "Cuenta con: " . $status . " No puede registrarse hasta:" . $fecha_nuevoregis, ]);
+                    return Redirect::back()->withErrors(["msg" => "Cuenta con una " . $status . "  No puede registrarse hasta: " . $fecha_nuevoregis, ]);
                    //Validacion para Oferta Rechazada
                    
                 }elseif (strcmp($status, "Oferta Rechazada") === 0) {
@@ -83,11 +83,12 @@ class DatosRenovacionController extends Controller
                     $serch = DB::table("datos_cliente")->where("rfc", $RFC)->get()->first();
                     $Id_Cliente = $serch->cliente_id;
                     $datoscredito = DB::table("datos_credito")->where("cliente_id", $Id_Cliente)->get()->first();
-                    $s = $datoscredito->monto; //Obtiene cuerpo del response
-                    $s2 = $datoscredito->plazo; //Obtiene cuerpo del response
-                    $s3 = $datoscredito->pago_mensual; //Obtiene cuerpo del response
-                    $s4 = $datoscredito->tasa_interes; //Obtiene cuerpo del response
-                       return view("oferta", compact("s", "s2", "s3", "s4"));
+                    $monto = $datoscredito->monto; //Obtiene cuerpo del response
+                    $plazo = $datoscredito->plazo; //Obtiene cuerpo del response
+                    $pago_mensual = $datoscredito->pago_mensual; //Obtiene cuerpo del response
+                    $tasa_interes = $datoscredito->tasa_interes; //Obtiene cuerpo del response
+                    $client_id=$Id_Cliente;
+                       return view("oferta", compact("monto", "plazo", "pago_mensual", "tasa_interes","client_id"));
                         //Validacion para Error con el Status
                     }else {
                        return Redirect::back()->withErrors(["msg" => "Cuenta con: Status ", ]);

@@ -53,8 +53,7 @@ class Cambio_CP_Controller extends Controller
             array_push($colonias_array,$value->colonia);
           }
 
-
-
+                                                        
         return compact('municipio','estado','colonias_array');
     }
 

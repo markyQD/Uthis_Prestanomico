@@ -10,8 +10,28 @@
     <link href="css/welcome.css" rel="stylesheet">
   </head>
   <body>
+      <!-- The Modal -->
+<div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+  
+  <p> {{$errors->first()}}</p>
+  <span class="close">&times;</span>
+</div>
+</div>
   @if($errors->any())
-  '<script>alert("{{$errors->first()}}")</script>'
+  '<script>
+  var modal = document.getElementById("myModal")
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0]
+modal.style.display = "block";
+span.onclick = function() {
+  modal.style.display = "none";
+}</script>'
+  
+
+
 @endif
     </div>
     <form method="POST" action=DatosRenovacion class="row g-3 needs-validation" data-toggle="validator">

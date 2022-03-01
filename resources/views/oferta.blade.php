@@ -23,7 +23,7 @@
     {{ csrf_field() }}
      <div id="app" >
 
-     <oferta monto='{{$s}}' plazo='{{$s2}}' pago_mensual='{{$s3}}' tasa_interes='{{$s4}}' cliente_id='{{$s5}}'> </oferta>
+     <oferta monto='{{$monto}}' plazo='{{$plazo}}' pago_mensual='{{$pago_mensual}}' tasa_interes='{{$tasa_interes}}' cliente_id='{{$client_id}}'> </oferta>
 </div>
 
 <script src="{{ mix('/js/app.js') }}"></script>

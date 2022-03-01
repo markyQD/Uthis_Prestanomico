@@ -2034,6 +2034,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2050,6 +2051,7 @@ __webpack_require__.r(__webpack_exports__);
       selected: '',
       datoscolonia1: "",
       datoscolonia2: "",
+      chance_cp: "No",
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     };
   },
@@ -2075,6 +2077,7 @@ __webpack_require__.r(__webpack_exports__);
         console.log(result.data.estado);
         console.log(result.data.municipio);
         console.log(result.data.colonias_array[0]);
+        _this.change_cp = "Si";
         _this.datos_domicilio.cp = event.target.value;
         _this.datos_domicilio.estado = result.data.estado;
         _this.datos_domicilio.municipio = result.data.municipio;
@@ -2144,7 +2147,6 @@ function log() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-//
 //
 //
 //
@@ -6654,7 +6656,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody {\n  display: flex;\n  -ms-flex-align: center;\n  -ms-flex-pack: center;\n  align-items: center;\n  justify-content: center;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.p-5 {\ncolor: black;\n}\n.rfc{\n    color: rgb(5 0 34);\n    font-weight: bold;\n    font-size: large;\n}\n.form-group{\n  width: 100%;\n  max-width: 550px;\n  padding: 15px;\n  margin: 5 auto;\n  border-color: blue;\n  border: 5px;\n}\n.bg-light {\n    background-color: #92c6f78e !important;\n    border-color: black;\n}\n.btn-enviar{\n  width: 70%;\n  padding: 5px;\n  margin: 0 auto;\n  border-color: rgb(2, 0, 92);\n}\n.titulo {\n    color: rgb(12 8 56);\n    font-weight: bold;\n}\n.form-control {\n    display: block;\n    width: 100%;\n    height: calc(1.6em + 0.75rem + 2px);\n    padding: 0.375rem 0.75rem;\n    font-size: 0.9rem;\n    font-weight: 400;\n    line-height: 1.6;\n    color: #000000;\n    background-color: #fff;\n    background-clip: padding-box;\n    border: 1px solid #ced4da;\n    border-radius: 0.25rem;\n    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n    font-size: medium;\n    font-weight: bold;\n}\n\n", ""]);
+exports.push([module.i, "\nbody {\n  display: flex;\n  -ms-flex-align: center;\n  -ms-flex-pack: center;\n  align-items: center;\n  justify-content: center;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.p-5 {\ncolor: black;\n}\n.rfc{\n    color: rgb(5 0 34);\n    font-weight: bold;\n    font-size: large;\n}\n.form-group{\n  width: 100%;\n  max-width: 550px;\n  padding: 15px;\n  margin: 5 auto;\n  border-color: blue;\n  border: 5px;\n}\n.bg-light {\n    background-color: #92c6f78e !important;\n    border-color: black;\n}\n.btn-enviar{\n     width: 44%;\n    padding: 5px;\n    margin: 0 auto;\n    border-color: rgb(0, 0, 3);\n    background-color: rgb(5, 0, 31);\n    font-size: medium;\n    font-style: revert;\n    font-weight: bold;\n    color: #fff;\n}\n.titulo {\n    color: rgb(12 8 56);\n    font-weight: bold;\n}\n.form-control {\n    display: block;\n    width: 100%;\n    height: calc(1.6em + 0.75rem + 2px);\n    padding: 0.375rem 0.75rem;\n    font-size: 0.9rem;\n    font-weight: 400;\n    line-height: 1.6;\n    color: #000000;\n    background-color: #fff;\n    background-clip: padding-box;\n    border: 1px solid #ced4da;\n    border-radius: 0.25rem;\n    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n    font-size: medium;\n    font-weight: bold;\n}\n\n", ""]);
 
 // exports
 
@@ -39235,6 +39237,18 @@ var render = function () {
         },
         domProps: { value: this.datos_credito.tasa_interes },
       }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          name: "chance_cp",
+          id: "chance_cp",
+          type: "hidden",
+          required: "",
+          readonly: "readonly",
+        },
+        domProps: { value: this.change_cp },
+      }),
     ],
     1
   )
@@ -39349,10 +39363,6 @@ var render = function () {
           ),
           _vm._v(" "),
           _c("span", { staticClass: "monto" }, [_vm._v(_vm._s(this.monto))]),
-          _vm._v(" "),
-          _c("span", { staticClass: "cliente" }, [
-            _vm._v(_vm._s(this.cliente_id)),
-          ]),
         ]),
         _vm._v(" "),
         _c("div", [
@@ -51921,14 +51931,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************!*\
   !*** ./resources/js/components/oferta.vue ***!
   \********************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _oferta_vue_vue_type_template_id_58983fbc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./oferta.vue?vue&type=template&id=58983fbc& */ "./resources/js/components/oferta.vue?vue&type=template&id=58983fbc&");
 /* harmony import */ var _oferta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./oferta.vue?vue&type=script&lang=js& */ "./resources/js/components/oferta.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _oferta_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./oferta.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/oferta.vue?vue&type=style&index=0&lang=css&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _oferta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _oferta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _oferta_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./oferta.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/oferta.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -51960,7 +51971,7 @@ component.options.__file = "resources/js/components/oferta.vue"
 /*!*********************************************************************!*\
   !*** ./resources/js/components/oferta.vue?vue&type=script&lang=js& ***!
   \*********************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

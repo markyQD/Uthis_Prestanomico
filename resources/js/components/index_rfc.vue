@@ -16,6 +16,7 @@
 
 
 <script>
+
    function log() {
   rfc = document.getElementById("rfc").value;
 }
@@ -23,6 +24,7 @@
 </script>
 
 <style>
+
 body {
   display: -ms-flexbox;
   display: -webkit-box;
@@ -63,10 +65,15 @@ color: black;
 }
 
 .btn-enviar{
-  width: 70%;
-  padding: 5px;
-  margin: 0 auto;
-  border-color: rgb(2, 0, 92);
+     width: 44%;
+    padding: 5px;
+    margin: 0 auto;
+    border-color: rgb(0, 0, 3);
+    background-color: rgb(5, 0, 31);
+    font-size: medium;
+    font-style: revert;
+    font-weight: bold;
+    color: #fff;
   
 }
 

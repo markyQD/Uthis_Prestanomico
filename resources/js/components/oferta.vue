@@ -8,7 +8,6 @@
           
          <label class="label-oferta"  for="monto">Monto: </label>
        <span class="monto">{{this.monto}}</span>
-       <span class="cliente">{{this.cliente_id}}</span>
        </div>
         
        <div>

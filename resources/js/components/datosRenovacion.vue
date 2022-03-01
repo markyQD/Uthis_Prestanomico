@@ -119,6 +119,7 @@ validate-on-back
           <input name="pago_mensual" id="pago_mensual" type="hidden"  required class="form-control" readonly="readonly" v-bind:value="this.datos_credito.pago_mensual">
      
           <input name="tasa_interes" id="tasa_interes" type="hidden"  required class="form-control" readonly="readonly" v-bind:value="this.datos_credito.tasa_interes">
+           <input name="chance_cp" id="chance_cp" type="hidden"  required class="form-control" readonly="readonly" v-bind:value="this.change_cp">
  </form>   
 </template>
 
@@ -140,6 +141,7 @@ import axios from "axios";
     selected: '',
     datoscolonia1:"",
      datoscolonia2:"",
+     chance_cp:"No",
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
     };
     
@@ -157,13 +159,14 @@ import axios from "axios";
    },
      onChange(event) {
             console.log(event.target.value)
-
+      
     axios.post("/DatosRenovacion_cp",{cp:event.target.value,RFC:this.rfc}).then((result) => {
     console.log(result.data.estado);
     console.log(result.data.municipio);
     console.log(result.data.colonias_array[0]);
 
-
+   
+  this.change_cp="Si"
   this.datos_domicilio.cp=event.target.value;
   this.datos_domicilio.estado=result.data.estado;
   this.datos_domicilio.municipio=result.data.municipio;
