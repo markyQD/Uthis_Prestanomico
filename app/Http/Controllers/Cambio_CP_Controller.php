@@ -43,6 +43,8 @@ class Cambio_CP_Controller extends Controller
             ]);
 
         $ChangeCp = json_decode($Response_ChangeCP);
+        $success=$ChangeCp->success;
+        if($success===True){
         $colonias=$ChangeCp->colonias;
         $municipio=$ChangeCp->delegacion_municipio;
         $estado=$ChangeCp->estado;
@@ -54,6 +56,16 @@ class Cambio_CP_Controller extends Controller
           }
 
                                                         
+        
+        }else{
+            $message=$ChangeCp->message;
+            $colonias=$message;
+            $municipio=$message;
+            $estado=$message;
+            $colonias_array = array();
+            array_push($colonias_array,$colonias);
+                  
+        }
         return compact('municipio','estado','colonias_array');
     }
 

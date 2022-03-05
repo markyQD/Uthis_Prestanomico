@@ -56,9 +56,9 @@ validate-on-back
   <div class="row2">
     <div class="col-4">
             <label class="label-datosPersonales"   for="Calle">Calle</label>
-         <input name="calle" id="calle" type="text"  :readonly=readonly required class="form-control"  v-bind:value="this.datos_domicilio.calle">
+         <input name="calle" id="calle" type="text"  :readonly=readonly required class="form-control" v-model="calle">
         <label class="label-datosPersonales"   for="no_exterior"># Exterior</label>
-          <input name="no_exterior" id="no_exterior"  type="text"  :readonly=readonly required class="form-control" v-bind:value="this.datos_domicilio.no_exterior">
+          <input name="no_exterior" id="no_exterior"  type="text"  :readonly=readonly required class="form-control" v-model="no_exterior">
    <label class="label-datosPersonales"  for="colonia">Colonia:  </label> <br>
   
 
@@ -71,16 +71,16 @@ validate-on-back
       
           <!-- <input name="colonia" id="colonia" type="text" required class="form-control" placeholder="colonia" v-bind:value="this.datos_domicilio.colonia"> -->
              <label for="estado">Estado:</label>
-          <input name="estado" id="estado" type="text" required class="form-control"  :readonly=readonly  v-bind:value="this.datos_domicilio.estado">
+          <input name="estado" id="estado" type="text" class="form-control"  :readonly=readonly  v-model="estado"  required>
         
     </div>
     <div class="col-4">
       <label class="label-datosPersonales"  for="no_interior"># Interior</label>
-          <input name="no_interior" id="no_interior" type="text" :readonly=readonly  required class="form-control" v-bind:value="this.datos_domicilio.no_interior">
+          <input name="no_interior" id="no_interior" type="text" :readonly=readonly  required class="form-control" v-model="no_interior">
           <label class="label-datosPersonales"  for="municipio">Municipio:</label>
-          <input name="municipio" id="municipio" type="text"  :readonly=readonly required class="form-control" v-bind:value="this.datos_domicilio.municipio">
+          <input name="municipio" id="municipio" type="text"  :readonly=readonly :required=required class="form-control" v-model="municipio">
  <label class="label-datosPersonales"  for="cp">CP:</label>
-          <input  name="cp" id="cp" type="number"  required class="form-control"  :readonly=readonly v-bind:value="this.datos_domicilio.cp" @change="onChange($event)">
+          <input  name="cp" id="cp" type="number"  required class="form-control"  :readonly=readonly v-model="cp" @change="onChange($event)">
          <span class="datos_actuales">¿Son los datos actuales?</span>
  <label class="switch" role="button">
     <input
@@ -107,10 +107,10 @@ validate-on-back
     </div>
   </div>
 
-
+ 
     </tab-content>
 </form-wizard>
-<input name="monto" id="monto" type="hidden"  readonly="readonly" equired class="form-control"  v-bind:value="this.datos_credito.monto">
+<input name="monto" id="monto" type="hidden"  readonly="readonly"  class="form-control"  v-bind:value="this.datos_credito.monto" >
         
           <input name="plazo" id="plazo" type="hidden"  readonly="readonly" required class="form-control" v-bind:value="this.datos_credito.plazo">
 
@@ -143,23 +143,50 @@ import axios from "axios";
      datoscolonia2:"",
      chance_cp:"No",
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+     errors: [],
     };
     
   },
   created() {
     this.checked = Boolean(this.active);
     this.update();
+    this.estado=this.datos_domicilio.estado;
+    this.calle=this.datos_domicilio.calle;
+    this.no_interior=this.datos_domicilio.no_interior;
+    this.no_exterior=this.datos_domicilio.no_exterior;
+    this.municipio=this.datos_domicilio.municipio;
+    this.cp=this.datos_domicilio.cp;
   },
   methods: {
+
     update() {
       this.label = this.checked ? this.dataOn : this.dataOff;
     },
-    onComplete() {
- document.formulario1.submit(this.datos_personales,this.datos_domicilio);
+
+    onComplete(e) {
+   
+ console.log(this.calle);
+  console.log(this.no_interior);
+   console.log(this.no_exterior);
+      if(this.datos_domicilio.estado == "CP debe ser 5 números" 
+      ||this.datos_domicilio.estado == "Not Found"){
+  			alert("Revisa Campo Estado!");
+        
+  		}
+  		if(!this.datos_domicilio.calle){
+  			alert("El campo calle no puede estar vacio!");
+  		}if(!this.datos_domicilio.no_exterior){
+  			alert("El campo # exterior no puede estar vacio!");
+  		}
+      document.formulario1.submit(this.datos_personales,this.datos_domicilio);
+       
+        
    },
      onChange(event) {
-            console.log(event.target.value)
-      
+       this.calle="";
+       this.no_interior="";
+       this.no_exterior="";
+       console.log(this.datos_domicilio.calle);
     axios.post("/DatosRenovacion_cp",{cp:event.target.value,RFC:this.rfc}).then((result) => {
     console.log(result.data.estado);
     console.log(result.data.municipio);
@@ -168,8 +195,8 @@ import axios from "axios";
    
   this.change_cp="Si"
   this.datos_domicilio.cp=event.target.value;
-  this.datos_domicilio.estado=result.data.estado;
-  this.datos_domicilio.municipio=result.data.municipio;
+  this.estado=result.data.estado;
+  this.municipio=result.data.municipio;
   this.datos_domicilio.colonia=result.data.colonias_array[0];
   this.datoscolonia1=result.data.colonias_array[1];
   this.datoscolonia2=result.data.colonias_array[2];

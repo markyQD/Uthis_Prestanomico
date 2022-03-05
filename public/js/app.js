@@ -2052,24 +2052,50 @@ __webpack_require__.r(__webpack_exports__);
       datoscolonia1: "",
       datoscolonia2: "",
       chance_cp: "No",
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+      errors: []
     };
   },
   created: function created() {
     this.checked = Boolean(this.active);
     this.update();
+    this.estado = this.datos_domicilio.estado;
+    this.calle = this.datos_domicilio.calle;
+    this.no_interior = this.datos_domicilio.no_interior;
+    this.no_exterior = this.datos_domicilio.no_exterior;
+    this.municipio = this.datos_domicilio.municipio;
+    this.cp = this.datos_domicilio.cp;
   },
   methods: {
     update: function update() {
       this.label = this.checked ? this.dataOn : this.dataOff;
     },
-    onComplete: function onComplete() {
+    onComplete: function onComplete(e) {
+      console.log(this.calle);
+      console.log(this.no_interior);
+      console.log(this.no_exterior);
+
+      if (this.datos_domicilio.estado == "CP debe ser 5 números" || this.datos_domicilio.estado == "Not Found") {
+        alert("Revisa Campo Estado!");
+      }
+
+      if (!this.datos_domicilio.calle) {
+        alert("El campo calle no puede estar vacio!");
+      }
+
+      if (!this.datos_domicilio.no_exterior) {
+        alert("El campo # exterior no puede estar vacio!");
+      }
+
       document.formulario1.submit(this.datos_personales, this.datos_domicilio);
     },
     onChange: function onChange(event) {
       var _this = this;
 
-      console.log(event.target.value);
+      this.calle = "";
+      this.no_interior = "";
+      this.no_exterior = "";
+      console.log(this.datos_domicilio.calle);
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/DatosRenovacion_cp", {
         cp: event.target.value,
         RFC: this.rfc
@@ -2079,8 +2105,8 @@ __webpack_require__.r(__webpack_exports__);
         console.log(result.data.colonias_array[0]);
         _this.change_cp = "Si";
         _this.datos_domicilio.cp = event.target.value;
-        _this.datos_domicilio.estado = result.data.estado;
-        _this.datos_domicilio.municipio = result.data.municipio;
+        _this.estado = result.data.estado;
+        _this.municipio = result.data.municipio;
         _this.datos_domicilio.colonia = result.data.colonias_array[0];
         _this.datoscolonia1 = result.data.colonias_array[1];
         _this.datoscolonia2 = result.data.colonias_array[2];
@@ -38968,6 +38994,14 @@ var render = function () {
                     ),
                     _vm._v(" "),
                     _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.calle,
+                          expression: "calle",
+                        },
+                      ],
                       staticClass: "form-control",
                       attrs: {
                         name: "calle",
@@ -38976,7 +39010,15 @@ var render = function () {
                         readonly: _vm.readonly,
                         required: "",
                       },
-                      domProps: { value: this.datos_domicilio.calle },
+                      domProps: { value: _vm.calle },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.calle = $event.target.value
+                        },
+                      },
                     }),
                     _vm._v(" "),
                     _c(
@@ -38989,6 +39031,14 @@ var render = function () {
                     ),
                     _vm._v(" "),
                     _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.no_exterior,
+                          expression: "no_exterior",
+                        },
+                      ],
                       staticClass: "form-control",
                       attrs: {
                         name: "no_exterior",
@@ -38997,7 +39047,15 @@ var render = function () {
                         readonly: _vm.readonly,
                         required: "",
                       },
-                      domProps: { value: this.datos_domicilio.no_exterior },
+                      domProps: { value: _vm.no_exterior },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.no_exterior = $event.target.value
+                        },
+                      },
                     }),
                     _vm._v(" "),
                     _c(
@@ -39034,15 +39092,31 @@ var render = function () {
                     ]),
                     _vm._v(" "),
                     _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.estado,
+                          expression: "estado",
+                        },
+                      ],
                       staticClass: "form-control",
                       attrs: {
                         name: "estado",
                         id: "estado",
                         type: "text",
-                        required: "",
                         readonly: _vm.readonly,
+                        required: "",
                       },
-                      domProps: { value: this.datos_domicilio.estado },
+                      domProps: { value: _vm.estado },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.estado = $event.target.value
+                        },
+                      },
                     }),
                   ]),
                   _vm._v(" "),
@@ -39057,6 +39131,14 @@ var render = function () {
                     ),
                     _vm._v(" "),
                     _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.no_interior,
+                          expression: "no_interior",
+                        },
+                      ],
                       staticClass: "form-control",
                       attrs: {
                         name: "no_interior",
@@ -39065,7 +39147,15 @@ var render = function () {
                         readonly: _vm.readonly,
                         required: "",
                       },
-                      domProps: { value: this.datos_domicilio.no_interior },
+                      domProps: { value: _vm.no_interior },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.no_interior = $event.target.value
+                        },
+                      },
                     }),
                     _vm._v(" "),
                     _c(
@@ -39078,15 +39168,31 @@ var render = function () {
                     ),
                     _vm._v(" "),
                     _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.municipio,
+                          expression: "municipio",
+                        },
+                      ],
                       staticClass: "form-control",
                       attrs: {
                         name: "municipio",
                         id: "municipio",
                         type: "text",
                         readonly: _vm.readonly,
-                        required: "",
+                        required: _vm.required,
                       },
-                      domProps: { value: this.datos_domicilio.municipio },
+                      domProps: { value: _vm.municipio },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.municipio = $event.target.value
+                        },
+                      },
                     }),
                     _vm._v(" "),
                     _c(
@@ -39099,6 +39205,14 @@ var render = function () {
                     ),
                     _vm._v(" "),
                     _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.cp,
+                          expression: "cp",
+                        },
+                      ],
                       staticClass: "form-control",
                       attrs: {
                         name: "cp",
@@ -39107,10 +39221,16 @@ var render = function () {
                         required: "",
                         readonly: _vm.readonly,
                       },
-                      domProps: { value: this.datos_domicilio.cp },
+                      domProps: { value: _vm.cp },
                       on: {
                         change: function ($event) {
                           return _vm.onChange($event)
+                        },
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.cp = $event.target.value
                         },
                       },
                     }),
@@ -39197,7 +39317,6 @@ var render = function () {
           id: "monto",
           type: "hidden",
           readonly: "readonly",
-          equired: "",
         },
         domProps: { value: this.datos_credito.monto },
       }),
@@ -51931,15 +52050,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************!*\
   !*** ./resources/js/components/oferta.vue ***!
   \********************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _oferta_vue_vue_type_template_id_58983fbc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./oferta.vue?vue&type=template&id=58983fbc& */ "./resources/js/components/oferta.vue?vue&type=template&id=58983fbc&");
 /* harmony import */ var _oferta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./oferta.vue?vue&type=script&lang=js& */ "./resources/js/components/oferta.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _oferta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _oferta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _oferta_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./oferta.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/oferta.vue?vue&type=style&index=0&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _oferta_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./oferta.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/oferta.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -51971,7 +52089,7 @@ component.options.__file = "resources/js/components/oferta.vue"
 /*!*********************************************************************!*\
   !*** ./resources/js/components/oferta.vue?vue&type=script&lang=js& ***!
   \*********************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

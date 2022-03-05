@@ -13,8 +13,11 @@ use App\Http\Controllers\ApiController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::post('/register', 'UserController@register');
+Route::post('/login', 'UserController@authenticate');
+Route::group(['middleware' => ['jwt.verify']], function() {
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/user', [ApiController::class, 'store']);
+});

@@ -100,38 +100,48 @@ class DatosRenovacionController extends Controller
                        //POST A LA API CON PARAMETRO EL BERARER TOKEN Y EL RFC
                        $Response_DatosRenovacion = Http::withToken($token_api)->post("https://sitiowebdesarrollo.centralus.cloudapp.azure.com/api/datosRenovacion", ["rfc" => $RFC, ]);
                        $Data_DatosRenovacion = json_decode($Response_DatosRenovacion->getBody(), true);
-                       $Data_Datos = $Data_DatosRenovacion["datos"];
-                       $Data_DatosPersonales = $Data_Datos["datos_personales"];
-                       $Cliente_id = $Data_DatosPersonales["cliente_id"];
-                       $nombre = $Data_DatosPersonales["nombre"];
-                       $apellido_paterno = $Data_DatosPersonales["apellido_paterno"];
-                       $apellido_materno = $Data_DatosPersonales["apellido_materno"];
-                       $fecha_nacimiento = $Data_DatosPersonales["fecha_nacimiento"];
-                       $ingresos = $Data_DatosPersonales["ingresos"];
-                       $egresos = $Data_DatosPersonales["egresos"];
-                       $no_dependientes = $Data_DatosPersonales["no_dependientes"];
-                       $estado_civil = $Data_DatosPersonales["estado_civil"];
-                       $genero = $Data_DatosPersonales["genero"];
-                       $ultimo_grado_estudios = $Data_DatosPersonales["ultimo_grado_estudios"];
-                       //Datos Domicilio
-                       $Data_DatosDomicilio = $Data_Datos["datos_domicilio"];
-                       $calle = $Data_DatosDomicilio["calle"];
-                       $no_exterior = $Data_DatosDomicilio["no_exterior"];
-                       $no_interior = $Data_DatosDomicilio["no_interior"];
-                       $colonia = $Data_DatosDomicilio["colonia"];
-                       $municipio = $Data_DatosDomicilio["municipio"];
-                       $estado = $Data_DatosDomicilio["estado"];
-                       $cp = $Data_DatosDomicilio["cp"];
-                       //Datos Credito
-                       $Data_DatosCredito = $Data_Datos["datos_credito"];
-                       $monto = $Data_DatosCredito["monto"];
-                       $plazo = $Data_DatosCredito["plazo"];
-                       $pago_mensual = $Data_DatosCredito["pago_mensual"];
-                       $tasa_interes = $Data_DatosCredito["tasa_interes"];
-                       $registro_datospersonales = Datos_Personales::create(["cliente_id" => $Cliente_id, "status" => "Pre-Registro", "nombre" => $nombre, "apellido_paterno" => $apellido_paterno, "apellido_materno" => $apellido_materno, "rfc" => $RFC, "fecha_nacimiento" => $fecha_nacimiento, "ingresos" => $ingresos, "egresos" => $egresos, "no_dependientes" => $no_dependientes, "estado_civil" => $estado_civil, "genero" => $genero, "ultimo_grado_estudios" => $ultimo_grado_estudios, ]);
-                       $registro_datosdomicilio = Datos_Domicilio::create(["cliente_id" => $Cliente_id, "calle" => $calle, "no_exterior" => $no_exterior, "no_interior" => $no_interior, "colonia" => $colonia, "municipio" => $municipio, "estado" => $estado, "cp" => $cp, "actualizado" => "No", ]);
-                       $registro_datoscredito = Datos_Credito::create(["cliente_id" => $Cliente_id, "monto" => $monto, "plazo" => $plazo, "pago_mensual" => $pago_mensual, "tasa_interes" => $tasa_interes, ]);
-                       return view("datosRenovacionOferta", compact("registro_datoscredito", "registro_datospersonales", "registro_datosdomicilio", "token_api"));
+                       $success_rfc = $Data_DatosRenovacion["success"];
+                     
+                       
+                       if($success_rfc == "1"){
+                        $Data_Datos = $Data_DatosRenovacion["datos"];
+                        $Data_DatosPersonales = $Data_Datos["datos_personales"];
+                        $Cliente_id = $Data_DatosPersonales["cliente_id"];
+                        $nombre = $Data_DatosPersonales["nombre"];
+                        $apellido_paterno = $Data_DatosPersonales["apellido_paterno"];
+                        $apellido_materno = $Data_DatosPersonales["apellido_materno"];
+                        $fecha_nacimiento = $Data_DatosPersonales["fecha_nacimiento"];
+                        $ingresos = $Data_DatosPersonales["ingresos"];
+                        $egresos = $Data_DatosPersonales["egresos"];
+                        $no_dependientes = $Data_DatosPersonales["no_dependientes"];
+                        $estado_civil = $Data_DatosPersonales["estado_civil"];
+                        $genero = $Data_DatosPersonales["genero"];
+                        $ultimo_grado_estudios = $Data_DatosPersonales["ultimo_grado_estudios"];
+                        //Datos Domicilio
+                        $Data_DatosDomicilio = $Data_Datos["datos_domicilio"];
+                        $calle = $Data_DatosDomicilio["calle"];
+                        $no_exterior = $Data_DatosDomicilio["no_exterior"];
+                        $no_interior = $Data_DatosDomicilio["no_interior"];
+                        $colonia = $Data_DatosDomicilio["colonia"];
+                        $municipio = $Data_DatosDomicilio["municipio"];
+                        $estado = $Data_DatosDomicilio["estado"];
+                        $cp = $Data_DatosDomicilio["cp"];
+                        //Datos Credito
+                        $Data_DatosCredito = $Data_Datos["datos_credito"];
+                        $monto = $Data_DatosCredito["monto"];
+                        $plazo = $Data_DatosCredito["plazo"];
+                        $pago_mensual = $Data_DatosCredito["pago_mensual"];
+                        $tasa_interes = $Data_DatosCredito["tasa_interes"];
+                        $registro_datospersonales = Datos_Personales::create(["cliente_id" => $Cliente_id, "status" => "Pre-Registro", "nombre" => $nombre, "apellido_paterno" => $apellido_paterno, "apellido_materno" => $apellido_materno, "rfc" => $RFC, "fecha_nacimiento" => $fecha_nacimiento, "ingresos" => $ingresos, "egresos" => $egresos, "no_dependientes" => $no_dependientes, "estado_civil" => $estado_civil, "genero" => $genero, "ultimo_grado_estudios" => $ultimo_grado_estudios, ]);
+                        $registro_datosdomicilio = Datos_Domicilio::create(["cliente_id" => $Cliente_id, "calle" => $calle, "no_exterior" => $no_exterior, "no_interior" => $no_interior, "colonia" => $colonia, "municipio" => $municipio, "estado" => $estado, "cp" => $cp, "actualizado" => "No", ]);
+                        $registro_datoscredito = Datos_Credito::create(["cliente_id" => $Cliente_id, "monto" => $monto, "plazo" => $plazo, "pago_mensual" => $pago_mensual, "tasa_interes" => $tasa_interes, ]);
+                        return view("datosRenovacionOferta", compact("registro_datoscredito", "registro_datospersonales", "registro_datosdomicilio", "token_api"));
+                       }else{
+                        $message=$Data_DatosRenovacion["message"];
+                        return Redirect::back()->withErrors(["msg" => "ERROR: "  . $message]);
+                       }
+                       
+                      
        
        
                }

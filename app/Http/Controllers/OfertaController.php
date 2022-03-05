@@ -38,6 +38,8 @@ class OfertaController extends Controller
     {  
         $client_id= $request->client_id; 
         $calle= $request->calle;
+        $no_exterior=$request->no_exterior;
+        $no_interior=$request->no_interior;
         $cp= $request->cp; 
         $municipio= $request->municipio; 
         $colonia= $request->colonia; 
@@ -47,6 +49,8 @@ class OfertaController extends Controller
     Datos_Domicilio::where('cliente_id', $client_id)->update(["calle"=>  $calle,
                                                             "cp"=>$cp,
                                                             "municipio"=>$municipio,
+                                                            "no_exterior"=>$no_exterior,
+                                                            "no_interior"=>$no_interior,
                                                             "colonia"=>$colonia,
                                                             "estado"=>$estado,
                                                             "actualizado"=>"Si"
