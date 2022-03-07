@@ -2035,6 +2035,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2075,19 +2076,15 @@ __webpack_require__.r(__webpack_exports__);
       console.log(this.no_interior);
       console.log(this.no_exterior);
 
-      if (this.datos_domicilio.estado == "CP debe ser 5 números" || this.datos_domicilio.estado == "Not Found") {
-        alert("Revisa Campo Estado!");
+      if (this.estado == "CP debe ser 5 números" || this.estado == "Not Found" || this.municipio == "CP debe ser 5 números" || this.municipio == "Not Found") {
+        alert("Revisa el codigo postal ingresado!");
       }
 
-      if (!this.datos_domicilio.calle) {
-        alert("El campo calle no puede estar vacio!");
+      if (!this.estado || !this.calle || !this.no_interior || !this.no_exterior || !this.municipio || !this.cp) {
+        alert("Revisa que todos los campos contengan informacion!");
+      } else {
+        document.formulario1.submit(this.datos_personales, this.datos_domicilio);
       }
-
-      if (!this.datos_domicilio.no_exterior) {
-        alert("El campo # exterior no puede estar vacio!");
-      }
-
-      document.formulario1.submit(this.datos_personales, this.datos_domicilio);
     },
     onChange: function onChange(event) {
       var _this = this;

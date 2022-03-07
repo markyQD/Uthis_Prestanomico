@@ -120,6 +120,7 @@ validate-on-back
      
           <input name="tasa_interes" id="tasa_interes" type="hidden"  required class="form-control" readonly="readonly" v-bind:value="this.datos_credito.tasa_interes">
            <input name="chance_cp" id="chance_cp" type="hidden"  required class="form-control" readonly="readonly" v-bind:value="this.change_cp">
+ 
  </form>   
 </template>
 
@@ -168,18 +169,18 @@ import axios from "axios";
  console.log(this.calle);
   console.log(this.no_interior);
    console.log(this.no_exterior);
-      if(this.datos_domicilio.estado == "CP debe ser 5 números" 
-      ||this.datos_domicilio.estado == "Not Found"){
-  			alert("Revisa Campo Estado!");
+      if(this.estado == "CP debe ser 5 números" 
+      ||this.estado == "Not Found" || this.municipio == "CP debe ser 5 números" 
+      ||this.municipio == "Not Found"){
+  			alert("Revisa el codigo postal ingresado!");
         
   		}
-  		if(!this.datos_domicilio.calle){
-  			alert("El campo calle no puede estar vacio!");
-  		}if(!this.datos_domicilio.no_exterior){
-  			alert("El campo # exterior no puede estar vacio!");
-  		}
+  		if(!this.estado || !this.calle || !this.no_interior || !this.no_exterior || !this.municipio 
+      || !this.cp){
+  			alert("Revisa que todos los campos contengan informacion!");
+  		}else{
       document.formulario1.submit(this.datos_personales,this.datos_domicilio);
-       
+      }
         
    },
      onChange(event) {
