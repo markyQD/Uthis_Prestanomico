@@ -59,6 +59,7 @@ class ApiController extends Controller
                 $rfc = $registros_rango[$i]->rfc;
                 $Id_Cliente = $registros_rango[$i]->cliente_id;
                 $created_at = $registros_rango[$i]->created_at;
+                $status = $registros_rango[$i]->status;
                 $datos_domicilio = DB::table("datos_domicilio")
             ->where("cliente_id", $Id_Cliente)
             ->get();
@@ -97,6 +98,7 @@ class ApiController extends Controller
 
                 array_push($registros_array,array( 
                 "Usuario"  => "Usuario ".$i,
+                "Status"  => $status,
                 "Creado el" => $created_at,
                 "Nombre" => $nombre_completo,
                 "RFC" => $rfc,
@@ -153,6 +155,7 @@ class ApiController extends Controller
         $rfc = $cliente->rfc;
         $Id_Cliente = $cliente->cliente_id;
         $created_at = $cliente->created_at;
+        $status = $cliente->status;
         $datos_domicilio = DB::table("datos_domicilio")
             ->where("cliente_id", $Id_Cliente)
             ->get()
@@ -187,6 +190,7 @@ class ApiController extends Controller
         return [
             "Datoscliente" => [
                 "Creado el" => $created_at,
+                "Status" => $status,
                 "Nombre" => $nombre_completo,
                 "RFC" => $rfc,
                 "Cliente_id" => $Id_Cliente,
