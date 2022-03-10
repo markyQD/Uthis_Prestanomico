@@ -15,17 +15,17 @@ class CreateDomicileDataTable extends Migration
     {
         Schema::create('datos_domicilio', function (Blueprint $table) {
             $table->increments('id');
-            $table-> integer("cliente_id")->unsigned();
-            $table-> string("calle",100);
-            $table-> string("no_exterior",100);
-            $table->string("no_interior",100);
-            $table->string("colonia",100);
-            $table->string( "municipio",100);
-            $table->string("estado",100);
-            $table->string("cp",100);
-            $table->string("actualizado",10);
-            
-             $table->timestamps();
+            $table->integer("cliente_id")->unsigned();
+            $table->string("calle", 100);
+            $table->string("no_exterior",20);
+            $table->string("no_interior", 20);
+            $table->string("colonia", 100);
+            $table->string("municipio", 100);
+            $table->string("estado", 100);
+            $table->string("cp", 50);
+            $table->string("actualizado", 10);
+
+            $table->timestamps();
         });
     }
 

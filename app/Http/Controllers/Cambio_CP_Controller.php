@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Http;
+
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent;
+use Illuminate\Support\Facades\Http;
 
 class Cambio_CP_Controller extends Controller
 {
@@ -35,38 +35,35 @@ class Cambio_CP_Controller extends Controller
      */
     public function store(Request $request)
     {
-          
-        $cp= $request->cp;
-        $RFC= $request->RFC;
+
+        $cp = $request->cp;
+        $RFC = $request->RFC;
         $token_api = $RFC;
-        $Response_ChangeCP= Http::withToken($token_api)->get('https://sitiowebdesarrollo.centralus.cloudapp.azure.com/api/codigo_postal/' . $cp, [
-            ]);
+        $Response_ChangeCP = Http::withToken($token_api)->get('https://sitiowebdesarrollo.centralus.cloudapp.azure.com/api/codigo_postal/' . $cp, [
+        ]);
 
         $ChangeCp = json_decode($Response_ChangeCP);
-        $success=$ChangeCp->success;
-        if($success===True){
-        $colonias=$ChangeCp->colonias;
-        $municipio=$ChangeCp->delegacion_municipio;
-        $estado=$ChangeCp->estado;
+        $success = $ChangeCp->success;
+        if ($success === true) {
+            $colonias = $ChangeCp->colonias;
+            $municipio = $ChangeCp->delegacion_municipio;
+            $estado = $ChangeCp->estado;
 
-
-        $colonias_array = array();
-        foreach ($colonias as $key => $value) {
-            array_push($colonias_array,$value->colonia);
-          }
-
-                                                        
-        
-        }else{
-            $message=$ChangeCp->message;
-            $colonias=$message;
-            $municipio=$message;
-            $estado=$message;
             $colonias_array = array();
-            array_push($colonias_array,$colonias);
-                  
+            foreach ($colonias as $key => $value) {
+                array_push($colonias_array, $value->colonia);
+            }
+
+        } else {
+            $message = $ChangeCp->message;
+            $colonias = $message;
+            $municipio = $message;
+            $estado = $message;
+            $colonias_array = array();
+            array_push($colonias_array, $colonias);
+
         }
-        return compact('municipio','estado','colonias_array');
+        return compact('municipio', 'estado', 'colonias_array');
     }
 
     /**
@@ -100,8 +97,7 @@ class Cambio_CP_Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-      
+
     }
 
     /**

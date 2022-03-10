@@ -15,12 +15,12 @@ class CreateCreditDataTable extends Migration
     {
         Schema::create('datos_credito', function (Blueprint $table) {
             $table->increments('id');
-            $table-> integer("cliente_id");
-            $table-> integer("monto");
-            $table-> string("plazo",100);
-            $table->float("pago_mensual",100);
-            $table->string("tasa_interes",50);
-             $table->timestamps();
+            $table->integer("cliente_id");
+            $table->integer("monto");
+            $table->string("plazo", 100);
+            $table->float("pago_mensual", 100);
+            $table->string("tasa_interes", 50);
+            $table->timestamps();
         });
     }
 

@@ -2036,6 +2036,219 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2049,11 +2262,11 @@ __webpack_require__.r(__webpack_exports__);
       dataOff: "No",
       readonly: true,
       //  key:this.datos_domicilio.municipio,
-      selected: '',
+      selected: "",
       datoscolonia1: "",
       datoscolonia2: "",
       chance_cp: "No",
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
       errors: []
     };
   },
@@ -2153,6 +2366,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 function log() {
   rfc = document.getElementById("rfc").value;
 }
@@ -2170,6 +2388,7 @@ function log() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
 //
 //
 //
@@ -6641,7 +6860,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".vue-form-wizard .wizard-title {\n  color: #ffffff;\n  font-weight: bold;\n  margin: 0;\n  text-align: center;\n}\n.label-datosPersonales {\n  color: #ffffff;\n  font-weight: bold;\n  font-family: arial;\n}\n.vue-form-wizard .wizard-nav-pills > li > a {\n  color: #ffffff;\n  font-weight: bold;\n}\n.vue-form-wizard .wizard-nav-pills > li > a {\n  color: #18064a;\n  font-weight: bold;\n}\n.container {\n  align-items: center;\n}\n.form-control:readonly, .form-control[readonly] {\n  background-color: #d3e0ee;\n  opacity: 1;\n  text-align: center;\n  font-weight: bold;\n  font-family: arial;\n}\n.row2 {\n  display: -webkit-inline-box;\n  flex-wrap: wrap;\n  margin-right: -15px;\n  margin-left: -15px;\n  float: right;\n  position: relative;\n  top: -21px;\n  left: 81px;\n}\n.common-styles {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 200px;\n  height: 200px;\n  border: 1px solid black;\n}\n.redClass {\n  border: 1px solid red;\n}\n.blueClass {\n  border: 1px solid blue;\n}\n.datos_actuales {\n  color: #eae9f5;\n  font-weight: bold;\n}\n.switch {\n  position: relative;\n  display: inline-block;\n  width: 80px;\n  height: 20px;\n  border-radius: 100px;\n}\n.switch .circle {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  height: 18px;\n  border-radius: 100px;\n  background-color: black;\n}\n.switch .circle > span {\n  font-size: 1rem;\n  color: #000000;\n  padding-left: 24px;\n}\n.switch .circle::before {\n  position: absolute;\n  content: \"\";\n  height: 16px;\n  width: 16px;\n  left: 1px;\n  top: 1px;\n  border-radius: 100px;\n  background-color: white;\n  transition: 0.4s;\n}\n.switch .circle:hover {\n  background-color: #333333;\n}\n.switch .circle:hover > span {\n  color: black;\n}\n.switch .circle-on {\n  background-color: #000f3f;\n}\n.switch .circle-on > span {\n  color: white;\n}\n.switch .circle-on:hover {\n  background-color: white;\n  border: 1px #000f3f solid;\n}\n.switch .circle-on:hover::before {\n  background-color: #000f3f;\n}\n.switch .circle-on:hover > span {\n  color: #000f3f;\n}\n.switch .circle-off {\n  background-color: rgba(0, 15, 63, 0.247);\n}\n.switch .circle-off > span {\n  color: white;\n}\n.switch .circle-off:hover {\n  background-color: white;\n  border: 1px rgba(0, 15, 63, 0.247) solid;\n}\n.switch .circle-off:hover::before {\n  background-color: rgba(0, 15, 63, 0.247);\n}\n.switch .circle-off:hover > span {\n  color: rgba(0, 15, 63, 0.247);\n}\n.switch input {\n  display: none;\n}\n.switch input:checked + .circle:before {\n  transform: translateX(62px);\n}", ""]);
+exports.push([module.i, ".vue-form-wizard .wizard-title {\n  color: #ffffff;\n  font-weight: bold;\n  margin: 0;\n  text-align: center;\n}\n.label-datosPersonales {\n  color: #ffffff;\n  font-weight: bold;\n  font-family: arial;\n}\n.vue-form-wizard .wizard-nav-pills > li > a {\n  color: #ffffff;\n  font-weight: bold;\n}\n.vue-form-wizard .wizard-nav-pills > li > a {\n  color: #18064a;\n  font-weight: bold;\n}\n.container {\n  align-items: center;\n}\n.form-control:readonly,\n.form-control[readonly] {\n  background-color: #d3e0ee;\n  opacity: 1;\n  text-align: center;\n  font-weight: bold;\n  font-family: arial;\n}\n.row2 {\n  display: -webkit-inline-box;\n  flex-wrap: wrap;\n  margin-right: -15px;\n  margin-left: -15px;\n  float: right;\n  position: relative;\n  top: -21px;\n  left: 81px;\n}\n.common-styles {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 200px;\n  height: 200px;\n  border: 1px solid black;\n}\n.redClass {\n  border: 1px solid red;\n}\n.blueClass {\n  border: 1px solid blue;\n}\n.datos_actuales {\n  color: #eae9f5;\n  font-weight: bold;\n}\n.switch {\n  position: relative;\n  display: inline-block;\n  width: 80px;\n  height: 20px;\n  border-radius: 100px;\n}\n.switch .circle {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  height: 18px;\n  border-radius: 100px;\n  background-color: black;\n}\n.switch .circle > span {\n  font-size: 1rem;\n  color: #000000;\n  padding-left: 24px;\n}\n.switch .circle::before {\n  position: absolute;\n  content: \"\";\n  height: 16px;\n  width: 16px;\n  left: 1px;\n  top: 1px;\n  border-radius: 100px;\n  background-color: white;\n  transition: 0.4s;\n}\n.switch .circle:hover {\n  background-color: #333333;\n}\n.switch .circle:hover > span {\n  color: black;\n}\n.switch .circle-on {\n  background-color: #000f3f;\n}\n.switch .circle-on > span {\n  color: white;\n}\n.switch .circle-on:hover {\n  background-color: white;\n  border: 1px #000f3f solid;\n}\n.switch .circle-on:hover::before {\n  background-color: #000f3f;\n}\n.switch .circle-on:hover > span {\n  color: #000f3f;\n}\n.switch .circle-off {\n  background-color: rgba(0, 15, 63, 0.247);\n}\n.switch .circle-off > span {\n  color: white;\n}\n.switch .circle-off:hover {\n  background-color: white;\n  border: 1px rgba(0, 15, 63, 0.247) solid;\n}\n.switch .circle-off:hover::before {\n  background-color: rgba(0, 15, 63, 0.247);\n}\n.switch .circle-off:hover > span {\n  color: rgba(0, 15, 63, 0.247);\n}\n.switch input {\n  display: none;\n}\n.switch input:checked + .circle:before {\n  transform: translateX(62px);\n}", ""]);
 
 // exports
 
@@ -6679,7 +6898,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody {\n  display: flex;\n  -ms-flex-align: center;\n  -ms-flex-pack: center;\n  align-items: center;\n  justify-content: center;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.p-5 {\ncolor: black;\n}\n.rfc{\n    color: rgb(5 0 34);\n    font-weight: bold;\n    font-size: large;\n}\n.form-group{\n  width: 100%;\n  max-width: 550px;\n  padding: 15px;\n  margin: 5 auto;\n  border-color: blue;\n  border: 5px;\n}\n.bg-light {\n    background-color: #92c6f78e !important;\n    border-color: black;\n}\n.btn-enviar{\n     width: 44%;\n    padding: 5px;\n    margin: 0 auto;\n    border-color: rgb(0, 0, 3);\n    background-color: rgb(5, 0, 31);\n    font-size: medium;\n    font-style: revert;\n    font-weight: bold;\n    color: #fff;\n}\n.titulo {\n    color: rgb(12 8 56);\n    font-weight: bold;\n}\n.form-control {\n    display: block;\n    width: 100%;\n    height: calc(1.6em + 0.75rem + 2px);\n    padding: 0.375rem 0.75rem;\n    font-size: 0.9rem;\n    font-weight: 400;\n    line-height: 1.6;\n    color: #000000;\n    background-color: #fff;\n    background-clip: padding-box;\n    border: 1px solid #ced4da;\n    border-radius: 0.25rem;\n    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n    font-size: medium;\n    font-weight: bold;\n}\n\n", ""]);
+exports.push([module.i, "\nbody {\n  display: flex;\n  -ms-flex-align: center;\n  -ms-flex-pack: center;\n  align-items: center;\n  justify-content: center;\n  padding-top: 40px;\n  padding-bottom: 40px;\n}\n.p-5 {\n  color: black;\n}\n.rfc {\n  color: rgb(5 0 34);\n  font-weight: bold;\n  font-size: large;\n}\n.form-group {\n  width: 100%;\n  max-width: 550px;\n  padding: 15px;\n  margin: 5 auto;\n  border-color: blue;\n  border: 5px;\n}\n.bg-light {\n  background-color: #92c6f78e !important;\n  border-color: black;\n}\n.btn-enviar {\n  width: 44%;\n  padding: 5px;\n  margin: 0 auto;\n  border-color: rgb(0, 0, 3);\n  background-color: rgb(5, 0, 31);\n  font-size: medium;\n  font-style: revert;\n  font-weight: bold;\n  color: #fff;\n}\n.titulo {\n  color: rgb(12 8 56);\n  font-weight: bold;\n}\n.form-control {\n  display: block;\n  width: 100%;\n  height: calc(1.6em + 0.75rem + 2px);\n  padding: 0.375rem 0.75rem;\n  font-size: 0.9rem;\n  font-weight: 400;\n  line-height: 1.6;\n  color: #000000;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n  font-size: medium;\n  font-weight: bold;\n}\n", ""]);
 
 // exports
 
@@ -6698,7 +6917,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody {\r\n  height: 100%;\r\n  background: rgba(1, 8, 32, 0.699);\r\n      text-align: center;\r\n  /* background: linear-gradient(135deg, rgb(4, 140, 143) 23%, rgb(193, 222, 255) 100%);  */\n}\n.monto:before{\r\ncontent: '$ ';\n}\n.plazo:before{\r\ncontent: '$ ';\n}\n.btn {\r\n    width: 130;\r\n    padding: 8;\r\n    margin: 0;\r\n    border-color: rgb(255 255 255);\r\n    font-size: large;\r\n    font-weight: bold;\n}\n.p-5 {\r\n   \r\n    color: #160808;\r\n    font-size: xx-large;\r\n    font-weight: bold;\n}\n.mb-3 {\r\n    color: rgb(234, 233, 245);\r\n    font-weight: bold;\n}\n.label-oferta{\r\n   color: rgb(4, 1, 44);\r\n    font-weight: bold;\r\n      font-size: x-large;\n}\r\n", ""]);
+exports.push([module.i, "\nbody {\r\n  height: 100%;\r\n  background: rgba(1, 8, 32, 0.699);\r\n  text-align: center;\r\n  /* background: linear-gradient(135deg, rgb(4, 140, 143) 23%, rgb(193, 222, 255) 100%);  */\n}\n.monto:before {\r\n  content: \"$ \";\n}\n.plazo:before {\r\n  content: \"$ \";\n}\n.btn {\r\n  width: 130;\r\n  padding: 8;\r\n  margin: 0;\r\n  border-color: rgb(255 255 255);\r\n  font-size: large;\r\n  font-weight: bold;\n}\n.p-5 {\r\n  color: #160808;\r\n  font-size: xx-large;\r\n  font-weight: bold;\n}\n.mb-3 {\r\n  color: rgb(234, 233, 245);\r\n  font-weight: bold;\n}\n.label-oferta {\r\n  color: rgb(4, 1, 44);\r\n  font-weight: bold;\r\n  font-size: x-large;\n}\r\n", ""]);
 
 // exports
 
@@ -39061,7 +39280,7 @@ var render = function () {
                         staticClass: "label-datosPersonales",
                         attrs: { for: "colonia" },
                       },
-                      [_vm._v("Colonia:  ")]
+                      [_vm._v("Colonia:\n            ")]
                     ),
                     _vm._v(" "),
                     _c("br"),
@@ -39411,7 +39630,7 @@ var staticRenderFns = [
             "div",
             {
               staticClass:
-                "form-group  text-center col-md-5 justify-content-center",
+                "form-group text-center col-md-5 justify-content-center",
             },
             [
               _c("label", { staticClass: "rfc", attrs: { for: "rfc" } }, [
@@ -39525,7 +39744,7 @@ var render = function () {
                 },
               },
             },
-            [_vm._v("Aceptar")]
+            [_vm._v("\n        Aceptar\n      ")]
           ),
           _vm._v(" "),
           _c(
@@ -39539,7 +39758,7 @@ var render = function () {
                 },
               },
             },
-            [_vm._v("Rechazar")]
+            [_vm._v("\n        Rechazar\n      ")]
           ),
         ]),
       ]

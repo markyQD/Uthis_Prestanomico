@@ -15,9 +15,9 @@
         <link rel="stylesheet" href="https://unpkg.com/@icon/themify-icons/themify-icons.css" />
     </head>
     <body >
-  
+
     <div id="app">
-     <datos_renovacion :datos_personales="{{$registro_datospersonales}}" :datos_domicilio="{{$registro_datosdomicilio}}" 
+     <datos_renovacion :datos_personales="{{$registro_datospersonales}}" :datos_domicilio="{{$registro_datosdomicilio}}"
      :datos_credito="{{$registro_datoscredito}}"  rfc="{{$token_api}}"> </datos_renovacion>
 </div>
 

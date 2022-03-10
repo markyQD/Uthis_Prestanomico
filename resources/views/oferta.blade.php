@@ -13,11 +13,11 @@
     </head>
     <body>
         <div>
-      
+
 
         </div>
 
-   
+
 
     <form method="POST" action=DatosRenovacion class="row g-3 needs-validation" data-toggle="validator">
     {{ csrf_field() }}

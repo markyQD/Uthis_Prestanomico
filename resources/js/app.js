@@ -31,14 +31,14 @@ Vue.component('oferta', require('./components/oferta.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
- new Vue({
-    el: '#app',
-    data: {
-        show: true,
-    },
-    methods: {
-        showHide: function(){
-          this.show = !this.show;
-      }
+new Vue({
+  el: '#app',
+  data: {
+    show: true,
+  },
+  methods: {
+    showHide: function () {
+      this.show = !this.show;
     }
-  })
+  }
+})

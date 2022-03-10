@@ -15,7 +15,7 @@
 
 <!-- Modal content -->
 <div class="modal-content">
-  
+
   <p> {{$errors->first()}}</p>
   <span class="close">&times;</span>
 </div>
@@ -29,7 +29,7 @@ modal.style.display = "block";
 span.onclick = function() {
   modal.style.display = "none";
 }</script>'
-  
+
 
 
 @endif

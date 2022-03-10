@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Datos_Personales;
+
 class IndexController extends Controller
 {
     /**
@@ -13,8 +13,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-      
-     return view('welcome');
+
+        return view('welcome');
     }
 
     /**
