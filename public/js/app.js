@@ -2265,7 +2265,7 @@ __webpack_require__.r(__webpack_exports__);
       selected: "",
       datoscolonia1: "",
       datoscolonia2: "",
-      chance_cp: "No",
+      change_cp: "No",
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
       errors: []
     };
@@ -2293,7 +2293,7 @@ __webpack_require__.r(__webpack_exports__);
         alert("Revisa el codigo postal ingresado!");
       }
 
-      if (!this.estado || !this.calle || !this.no_interior || !this.no_exterior || !this.municipio || !this.cp) {
+      if (!this.estado || !this.calle || !this.no_exterior || !this.municipio || !this.cp) {
         alert("Revisa que todos los campos contengan informacion!");
       } else {
         document.formulario1.submit(this.datos_personales, this.datos_domicilio);
@@ -2316,6 +2316,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.change_cp = "Si";
         _this.datos_domicilio.cp = event.target.value;
         _this.estado = result.data.estado;
+        _this.municipio = result.data.municipio;
         _this.municipio = result.data.municipio;
         _this.datos_domicilio.colonia = result.data.colonias_array[0];
         _this.datoscolonia1 = result.data.colonias_array[1];
@@ -39576,8 +39577,8 @@ var render = function () {
       _c("input", {
         staticClass: "form-control",
         attrs: {
-          name: "chance_cp",
-          id: "chance_cp",
+          name: "change_cp",
+          id: "change_cp",
           type: "hidden",
           required: "",
           readonly: "readonly",

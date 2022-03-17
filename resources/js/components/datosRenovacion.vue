@@ -326,8 +326,8 @@
       v-bind:value="this.datos_credito.tasa_interes"
     />
     <input
-      name="chance_cp"
-      id="chance_cp"
+      name="change_cp"
+      id="change_cp"
       type="hidden"
       required
       class="form-control"
@@ -353,7 +353,7 @@ export default {
       selected: "",
       datoscolonia1: "",
       datoscolonia2: "",
-      chance_cp: "No",
+      change_cp: "No",
       csrf: document
         .querySelector('meta[name="csrf-token"]')
         .getAttribute("content"),
@@ -390,7 +390,6 @@ export default {
       if (
         !this.estado ||
         !this.calle ||
-        !this.no_interior ||
         !this.no_exterior ||
         !this.municipio ||
         !this.cp
@@ -419,6 +418,7 @@ export default {
           this.datos_domicilio.cp = event.target.value;
           this.estado = result.data.estado;
           this.municipio = result.data.municipio;
+               this.municipio = result.data.municipio;
           this.datos_domicilio.colonia = result.data.colonias_array[0];
           this.datoscolonia1 = result.data.colonias_array[1];
           this.datoscolonia2 = result.data.colonias_array[2];
