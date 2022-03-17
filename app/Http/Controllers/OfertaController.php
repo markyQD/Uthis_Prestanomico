@@ -44,9 +44,9 @@ class OfertaController extends Controller
         $municipio = $request->municipio;
         $colonia = $request->colonia;
         $estado = $request->estado;
-        $change_cp = $request->change_cp;
+        $chance_cp = $request->chance_cp;
         //tp
-        if (strcmp($change_cp, "Si") === 0) {
+        if (strcmp($chance_cp, "Si") === 0) {
             Datos_Domicilio::where('cliente_id', $client_id)->update(["calle" => $calle,
                 "cp" => $cp,
                 "municipio" => $municipio,
