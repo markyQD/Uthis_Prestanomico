@@ -18,7 +18,7 @@ class CreateDomicileDataTable extends Migration
             $table->integer("cliente_id")->unsigned();
             $table->string("calle", 100);
             $table->string("no_exterior",20);
-            $table->string("no_interior", 20);
+            $table->string("no_interior", 20)->nullable();
             $table->string("colonia", 100);
             $table->string("municipio", 100);
             $table->string("estado", 100);
