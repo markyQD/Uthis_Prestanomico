@@ -24,7 +24,7 @@
       <tab-content title="Datos Personales " icon="ti ti-user">
         <div class="container">
           <div class="row">
-            <div class="col-4">
+            <div class="col-auto mr-auto">
               <label class="label-datosPersonales" for="client_id"
                 >Cliente_id</label
               >
@@ -75,14 +75,11 @@
                 v-bind:value="this.datos_personales.ingresos"
               />
             </div>
-            <div class="col-4">
-              <label class="label-datosPersonales" for="client_id"
-                >Client_id</label
-              >
+            <div class="col-auto mr-auto">
+              
 
               <label class="label-datosPersonales" for="no_dependientes"
-                >No Dependientes:</label
-              >
+                >No Dependientes:</label>
               <input
                 name="no_dependientes"
                 id="no_dependientes"
@@ -102,7 +99,7 @@
                 readonly="readonly"
                 v-bind:value="this.datos_personales.genero"
               />
-              <label for="estado_civil">Estado Civil:</label>
+              <label for="estado_civil" class="label-datosPersonales">Estado Civil:</label>
               <input
                 name="estado_civil"
                 id="estado_civil"
@@ -125,7 +122,7 @@
                 v-bind:value="this.datos_personales.ultimo_grado_estudios"
               />
             </div>
-            <div class="col-4">
+            <div class="col-auto mr-auto">
               <label class="label-datosPersonales" for="Nombre">Nombre</label>
               <input
                 name="Nombre"
@@ -179,7 +176,7 @@
       <tab-content title="Datos Domicilio" icon="ti ti-map-alt">
         <div class="container">
           <div class="row2">
-            <div class="col-4">
+            <div class="col-auto mr-auto">
               <label class="label-datosPersonales" for="Calle">Calle</label>
               <input
                 name="calle"
@@ -212,10 +209,11 @@
                 <option>{{ datoscolonia1 }}</option>
                 <option>{{ datoscolonia2 }}</option>
               </select>
-              <span>Seleccionado: {{ selected }}</span>
+           
 
               <!-- <input name="colonia" id="colonia" type="text" required class="form-control" placeholder="colonia" v-bind:value="this.datos_domicilio.colonia"> -->
-              <label for="estado">Estado:</label>
+              <br />
+              <label for="estado" class="label-datosPersonales">Estado:</label>
               <input
                 name="estado"
                 id="estado"
@@ -226,7 +224,7 @@
                 required
               />
             </div>
-            <div class="col-4">
+            <div class="col-auto mr-auto">
               <label class="label-datosPersonales" for="no_interior"
                 ># Interior</label
               >
@@ -262,6 +260,7 @@
                 v-model="cp"
                 @change="onChange($event)"
               />
+              <br /><br />
               <span class="datos_actuales">¿Son los datos actuales?</span>
               <label class="switch" role="button">
                 <input
@@ -453,6 +452,12 @@ $w: 80px;
 $h: 20px;
 $circle: $h - 4;
 $toggle-dis: $w - $circle - 2;
+
+select {
+    word-wrap: normal;
+    width: 250px;
+}
+
 
 .vue-form-wizard .wizard-title {
   color: #ffffff;

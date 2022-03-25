@@ -2248,7 +2248,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -6861,7 +6860,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".vue-form-wizard .wizard-title {\n  color: #ffffff;\n  font-weight: bold;\n  margin: 0;\n  text-align: center;\n}\n.label-datosPersonales {\n  color: #ffffff;\n  font-weight: bold;\n  font-family: arial;\n}\n.vue-form-wizard .wizard-nav-pills > li > a {\n  color: #ffffff;\n  font-weight: bold;\n}\n.vue-form-wizard .wizard-nav-pills > li > a {\n  color: #18064a;\n  font-weight: bold;\n}\n.container {\n  align-items: center;\n}\n.form-control:readonly,\n.form-control[readonly] {\n  background-color: #d3e0ee;\n  opacity: 1;\n  text-align: center;\n  font-weight: bold;\n  font-family: arial;\n}\n.row2 {\n  display: -webkit-inline-box;\n  flex-wrap: wrap;\n  margin-right: -15px;\n  margin-left: -15px;\n  float: right;\n  position: relative;\n  top: -21px;\n  left: 81px;\n}\n.common-styles {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 200px;\n  height: 200px;\n  border: 1px solid black;\n}\n.redClass {\n  border: 1px solid red;\n}\n.blueClass {\n  border: 1px solid blue;\n}\n.datos_actuales {\n  color: #eae9f5;\n  font-weight: bold;\n}\n.switch {\n  position: relative;\n  display: inline-block;\n  width: 80px;\n  height: 20px;\n  border-radius: 100px;\n}\n.switch .circle {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  height: 18px;\n  border-radius: 100px;\n  background-color: black;\n}\n.switch .circle > span {\n  font-size: 1rem;\n  color: #000000;\n  padding-left: 24px;\n}\n.switch .circle::before {\n  position: absolute;\n  content: \"\";\n  height: 16px;\n  width: 16px;\n  left: 1px;\n  top: 1px;\n  border-radius: 100px;\n  background-color: white;\n  transition: 0.4s;\n}\n.switch .circle:hover {\n  background-color: #333333;\n}\n.switch .circle:hover > span {\n  color: black;\n}\n.switch .circle-on {\n  background-color: #000f3f;\n}\n.switch .circle-on > span {\n  color: white;\n}\n.switch .circle-on:hover {\n  background-color: white;\n  border: 1px #000f3f solid;\n}\n.switch .circle-on:hover::before {\n  background-color: #000f3f;\n}\n.switch .circle-on:hover > span {\n  color: #000f3f;\n}\n.switch .circle-off {\n  background-color: rgba(0, 15, 63, 0.247);\n}\n.switch .circle-off > span {\n  color: white;\n}\n.switch .circle-off:hover {\n  background-color: white;\n  border: 1px rgba(0, 15, 63, 0.247) solid;\n}\n.switch .circle-off:hover::before {\n  background-color: rgba(0, 15, 63, 0.247);\n}\n.switch .circle-off:hover > span {\n  color: rgba(0, 15, 63, 0.247);\n}\n.switch input {\n  display: none;\n}\n.switch input:checked + .circle:before {\n  transform: translateX(62px);\n}", ""]);
+exports.push([module.i, "select {\n  word-wrap: normal;\n  width: 250px;\n}\n.vue-form-wizard .wizard-title {\n  color: #ffffff;\n  font-weight: bold;\n  margin: 0;\n  text-align: center;\n}\n.label-datosPersonales {\n  color: #ffffff;\n  font-weight: bold;\n  font-family: arial;\n}\n.vue-form-wizard .wizard-nav-pills > li > a {\n  color: #ffffff;\n  font-weight: bold;\n}\n.vue-form-wizard .wizard-nav-pills > li > a {\n  color: #18064a;\n  font-weight: bold;\n}\n.container {\n  align-items: center;\n}\n.form-control:readonly,\n.form-control[readonly] {\n  background-color: #d3e0ee;\n  opacity: 1;\n  text-align: center;\n  font-weight: bold;\n  font-family: arial;\n}\n.row2 {\n  display: -webkit-inline-box;\n  flex-wrap: wrap;\n  margin-right: -15px;\n  margin-left: -15px;\n  float: right;\n  position: relative;\n  top: -21px;\n  left: 81px;\n}\n.common-styles {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 200px;\n  height: 200px;\n  border: 1px solid black;\n}\n.redClass {\n  border: 1px solid red;\n}\n.blueClass {\n  border: 1px solid blue;\n}\n.datos_actuales {\n  color: #eae9f5;\n  font-weight: bold;\n}\n.switch {\n  position: relative;\n  display: inline-block;\n  width: 80px;\n  height: 20px;\n  border-radius: 100px;\n}\n.switch .circle {\n  display: flex;\n  align-items: center;\n  width: 100%;\n  height: 18px;\n  border-radius: 100px;\n  background-color: black;\n}\n.switch .circle > span {\n  font-size: 1rem;\n  color: #000000;\n  padding-left: 24px;\n}\n.switch .circle::before {\n  position: absolute;\n  content: \"\";\n  height: 16px;\n  width: 16px;\n  left: 1px;\n  top: 1px;\n  border-radius: 100px;\n  background-color: white;\n  transition: 0.4s;\n}\n.switch .circle:hover {\n  background-color: #333333;\n}\n.switch .circle:hover > span {\n  color: black;\n}\n.switch .circle-on {\n  background-color: #000f3f;\n}\n.switch .circle-on > span {\n  color: white;\n}\n.switch .circle-on:hover {\n  background-color: white;\n  border: 1px #000f3f solid;\n}\n.switch .circle-on:hover::before {\n  background-color: #000f3f;\n}\n.switch .circle-on:hover > span {\n  color: #000f3f;\n}\n.switch .circle-off {\n  background-color: rgba(0, 15, 63, 0.247);\n}\n.switch .circle-off > span {\n  color: white;\n}\n.switch .circle-off:hover {\n  background-color: white;\n  border: 1px rgba(0, 15, 63, 0.247) solid;\n}\n.switch .circle-off:hover::before {\n  background-color: rgba(0, 15, 63, 0.247);\n}\n.switch .circle-off:hover > span {\n  color: rgba(0, 15, 63, 0.247);\n}\n.switch input {\n  display: none;\n}\n.switch input:checked + .circle:before {\n  transform: translateX(62px);\n}", ""]);
 
 // exports
 
@@ -38916,7 +38915,7 @@ var render = function () {
             [
               _c("div", { staticClass: "container" }, [
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-4" }, [
+                  _c("div", { staticClass: "col-auto mr-auto" }, [
                     _c(
                       "label",
                       {
@@ -39006,16 +39005,7 @@ var render = function () {
                     }),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-4" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "label-datosPersonales",
-                        attrs: { for: "client_id" },
-                      },
-                      [_vm._v("Client_id")]
-                    ),
-                    _vm._v(" "),
+                  _c("div", { staticClass: "col-auto mr-auto" }, [
                     _c(
                       "label",
                       {
@@ -39060,9 +39050,14 @@ var render = function () {
                       domProps: { value: this.datos_personales.genero },
                     }),
                     _vm._v(" "),
-                    _c("label", { attrs: { for: "estado_civil" } }, [
-                      _vm._v("Estado Civil:"),
-                    ]),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "label-datosPersonales",
+                        attrs: { for: "estado_civil" },
+                      },
+                      [_vm._v("Estado Civil:")]
+                    ),
                     _vm._v(" "),
                     _c("input", {
                       staticClass: "form-control",
@@ -39100,7 +39095,7 @@ var render = function () {
                     }),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-4" }, [
+                  _c("div", { staticClass: "col-auto mr-auto" }, [
                     _c(
                       "label",
                       {
@@ -39200,7 +39195,7 @@ var render = function () {
             [
               _c("div", { staticClass: "container" }, [
                 _c("div", { staticClass: "row2" }, [
-                  _c("div", { staticClass: "col-4" }, [
+                  _c("div", { staticClass: "col-auto mr-auto" }, [
                     _c(
                       "label",
                       {
@@ -39300,13 +39295,16 @@ var render = function () {
                       ]
                     ),
                     _vm._v(" "),
-                    _c("span", [
-                      _vm._v("Seleccionado: " + _vm._s(_vm.selected)),
-                    ]),
+                    _c("br"),
                     _vm._v(" "),
-                    _c("label", { attrs: { for: "estado" } }, [
-                      _vm._v("Estado:"),
-                    ]),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "label-datosPersonales",
+                        attrs: { for: "estado" },
+                      },
+                      [_vm._v("Estado:")]
+                    ),
                     _vm._v(" "),
                     _c("input", {
                       directives: [
@@ -39337,7 +39335,7 @@ var render = function () {
                     }),
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-4" }, [
+                  _c("div", { staticClass: "col-auto mr-auto" }, [
                     _c(
                       "label",
                       {
@@ -39451,6 +39449,9 @@ var render = function () {
                         },
                       },
                     }),
+                    _vm._v(" "),
+                    _c("br"),
+                    _c("br"),
                     _vm._v(" "),
                     _c("span", { staticClass: "datos_actuales" }, [
                       _vm._v("¿Son los datos actuales?"),

@@ -37,8 +37,11 @@ class Cambio_CP_Controller extends Controller
     {
 
         $cp = $request->cp;
-        $RFC = $request->RFC;
-        $token_api = $RFC;
+        //$RFC = $request->RFC;
+        //$token_api = $RFC;
+        $Api_login = Http::post("https://sitiowebdesarrollo.centralus.cloudapp.azure.com/api/login", ["email" => "marco.quintero@prestanomico.com", "password" => "Marco.Te5t22"]);
+        $Data_login = json_decode($Api_login->getBody(), true); //Obtiene cuerpo del response
+        $token_api = $Data_login["token"]; //Obtiene bearer token login
         $Response_ChangeCP = Http::withToken($token_api)->get('https://sitiowebdesarrollo.centralus.cloudapp.azure.com/api/codigo_postal/' . $cp, [
         ]);
 
