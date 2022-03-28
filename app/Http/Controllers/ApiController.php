@@ -49,7 +49,7 @@ class ApiController extends Controller
                 return response()->json(['Error' => $validator->errors()]);
             }
             $registros_rango = DB::table("datos_cliente")
-                ->whereBetween('created_at', [$fecha_inicio, $fecha_fin . "+ 1 day"])->get();
+                ->whereBetween('created_at', [$fecha_inicio, $fecha_fin])->get();
             $registros_array = array();
             for ($i = 0; $i < count($registros_rango); $i++) {
                 $nombre = $registros_rango[$i]->nombre;
