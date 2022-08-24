@@ -4,7 +4,7 @@
       <h1 class="titulo">Uthis</h1>
       <h4 class="titulo">Prueba Tecnica</h4>
       <div class="form-group text-center col-md-5 justify-content-center">
-        <label class="rfc" for="rfc">Escriba su RFC: </label>
+        <label class="rfc" for="rfc">Escriba su RFC aqui: </label>
         <input
           type="text"
           class="form-control"
